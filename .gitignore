@@ -4,4 +4,7 @@ __pycache__/
 .ipynb_checkpoints
 .DS_Store
 email_dataset/
+!email_dataset/train/texts_subset.csv
+!email_dataset/train/texts_with_clusters.csv
+!email_dataset/train/embeddings_subset.npy
 
