@@ -1,0 +1,19 @@
+# Backend
+fastapi
+uvicorn
+pydantic
+
+# Frontend
+streamlit
+
+# OpenAI & dotenv
+openai>=1.0.0
+python-dotenv
+
+# ML / Data processing
+pandas
+numpy
+scikit-learn
+joblib
+tqdm
+matplotlib
