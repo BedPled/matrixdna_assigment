@@ -1,15 +1,17 @@
-FROM python:3.12-slim
+# Используем официальный Python образ
+FROM python:3.10-slim
 
-# Install dependencies
+# Установка зависимостей
 WORKDIR /app
-COPY requirements.txt .
+
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the entire application
+# Копируем все файлы проекта
 COPY . .
 
-# Expose port
-EXPOSE 8000
+# Указываем переменную среды для запуска FastAPI
+ENV OPENAI_API_KEY=your_dummy_key  # на Render заменится переменной окружения
 
-# Run FastAPI via uvicorn
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Запускаем Streamlit
+CMD ["streamlit", "run", "frontend/app.py", "--server.port=10000", "--server.enableCORS=false"]
