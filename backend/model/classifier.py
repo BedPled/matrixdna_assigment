@@ -1,7 +1,7 @@
 from openai import OpenAI
 from shared.config import OPENAI_API_KEY, FINE_TUNED_MODEL
 
-# ✅ Создаём OpenAI клиента
+# Create OpenAI client
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 def classify_email(text: str) -> str:
