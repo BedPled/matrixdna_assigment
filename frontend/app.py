@@ -1,5 +1,8 @@
+import os
 import streamlit as st
 import requests
+
+BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 
 st.title("📧 Email Classifier (Fine-tuned GPT)")
 
@@ -11,7 +14,7 @@ if st.button("Classify"):
     else:
         with st.spinner("Classifying..."):
             response = requests.post(
-                "http://localhost:8000/classify",
+                f"{BACKEND_URL}/classify",
                 json={"content": email}
             )
             if response.ok:
